@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+}
+
+h2 {
+    margin-bottom: 1em;
+}
+
+table.students-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table.students-table th,
+table.students-table td {
+    border: 1px solid #666;
+    padding: 0.5em 1em;
+    text-align: left;
+}
+
+table.students-table th {
+    background-color: #4a76a8;
+    color: #fff;
+}
+
+table.students-table tr:nth-child(even) {
+    background-color: #eef2f7;
+}
+
+table.students-table td:nth-child(2) {
+    /* Жіночий / чоловічий колір тексту */
+}
+
+student[gender="female"]~.students-table td:nth-child(2) {
+    /* Для тренування: можна динамічно підсвічувати через JS, 
+       але в чистому XSLT/CSS без контейнера це складніше. */
+}

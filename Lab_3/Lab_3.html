@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Перевірка усного рахунку</title>
+    <link rel="stylesheet" href="Lab_3.css">
+</head>
+
+<body>
+    <h1 class="center">Математичний тест</h1>
+    <hr>
+
+    <form id="testForm">
+        <table class="center">
+            <tr>
+                <td><button type="button" onclick="maxValue=10; mainCalc()">0–10</button></td>
+                <td><button type="button" onclick="maxValue=20; mainCalc()">0–20</button></td>
+                <td><button type="button" onclick="maxValue=100; mainCalc()">0–100</button></td>
+                <td><button type="button" onclick="maxValue=26; mainCalc()">0–26</button></td>
+                <td><button type="button" onclick="setSign('+')">+</button></td>
+                <td><button type="button" onclick="setSign('-')">−</button></td>
+                <td><button type="button" onclick="setSign('*')">×</button></td>
+            </tr>
+        </table>
+        <hr>
+
+        <table class="center">
+            <tr>
+                <td><input id="op1" readonly></td>
+                <td><input id="s_sign" readonly></td>
+                <td><input id="op2" readonly></td>
+                <td>=</td>
+                <td><input id="result" readonly></td>
+                <td><button type="button" onclick="mainCalc()">❓</button></td>
+                <td><input id="r0" readonly value="???"></td>
+            </tr>
+        </table>
+        <hr>
+
+        <table id="keyboard" class="center">
+            <tr>
+                <td><button type="button" onclick="inputSign('1')">1</button></td>
+                <td><button type="button" onclick="inputSign('2')">2</button></td>
+                <td><button type="button" onclick="inputSign('3')">3</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="inputSign('4')">4</button></td>
+                <td><button type="button" onclick="inputSign('5')">5</button></td>
+                <td><button type="button" onclick="inputSign('6')">6</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="inputSign('7')">7</button></td>
+                <td><button type="button" onclick="inputSign('8')">8</button></td>
+                <td><button type="button" onclick="inputSign('9')">9</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="inputSign('0')">0</button></td>
+                <td colspan="2"><button type="button" onclick="inputSign('OK')">OK</button></td>
+            </tr>
+        </table>
+    </form>
+    <hr>
+
+    <script>
+        let maxValue = 10,
+            operand1 = 0,
+            operand2 = 0,
+            input = "",
+            flag = 0,
+            sign = "+";
+
+        function setSign(x) {
+            sign = x;
+            flag = (x === "+") ? 0 : (x === "-") ? 1 : 2;
+            mainCalc();
+        }
+
+        function fOperand() {
+            return operand1 = Math.floor(Math.random() * maxValue);
+        }
+
+        function sOperand() {
+            if (flag === 0)
+                return operand2 = Math.floor(Math.random() * (maxValue - operand1 + 1));
+            else if (flag === 1)
+                return operand2 = Math.floor(Math.random() * (operand1 + 1));
+            else
+                return operand2 = Math.floor(Math.random() * maxValue);
+        }
+
+        function mainCalc() {
+            fOperand();
+            sOperand();
+            document.getElementById("op1").value = operand1;
+            document.getElementById("op2").value = operand2;
+            document.getElementById("s_sign").value = sign;
+            document.getElementById("result").value = "";
+            document.getElementById("r0").value = "???";
+            input = "";
+        }
+
+        function inputSign(x) {
+            if (x === "OK") {
+                let user = parseInt(input, 10),
+                    correct = (flag === 0) ? operand1 + operand2
+                        : (flag === 1) ? operand1 - operand2
+                            : operand1 * operand2;
+                document.getElementById("r0").value = (user === correct) ? "Вірно!" : "Спробуй ще!";
+                input = "";
+                document.getElementById("result").value = "";
+            } else {
+                input += x;
+                document.getElementById("result").value = input;
+            }
+        }
+
+        window.onload = mainCalc;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students SYSTEM "students.dtd">
+<?xml-stylesheet type="text/xsl" href="students.xslt"?>
+
+<students>
+  <student gender="male"   group="Б-121-22-1-ПІ">Іваненко Іван</student>
+  <student gender="female" group="Б-121-22-3-ПІ">Петренко Олена</student>
+  <student gender="male"   group="Б-121-22-2-ПІ">Сидорчук Олег</student>
+  <student gender="female"   group="Б-121-22-21-ПІ">Колобок Марія</student>
+  <student gender="female"   group="Б-121-22-2-ПІ">Докер Вікторія</student>
+</students>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація студента</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+
+    <section class="card">
+        <h2 class="card__title">Реєстрація студента</h2>
+        <form id="studentForm" class="card__form">
+            <input type="hidden" id="recordId">
+
+            <div class="field">
+                <label class="field__label" for="firstname">Ім’я</label>
+                <input id="firstname" name="firstname" class="field__input" required>
+            </div>
+
+            <div class="field">
+                <label class="field__label" for="lastname">Прізвище</label>
+                <input id="lastname" name="lastname" class="field__input" required>
+            </div>
+
+            <div class="field">
+                <label class="field__label" for="middlename">По‑батькові</label>
+                <input id="middlename" name="middlename" class="field__input">
+            </div>
+
+            <div class="field field--inline">
+                <span class="field__label">Стать</span>
+                <label class="radio">
+                    <input type="radio" name="gender" value="male" required>
+                    <span class="radio__box"></span> Чоловіча
+                </label>
+                <label class="radio">
+                    <input type="radio" name="gender" value="female">
+                    <span class="radio__box"></span> Жіноча
+                </label>
+            </div>
+
+            <div class="field">
+                <label class="field__label" for="group">Група</label>
+                <select id="group" name="group" class="field__input" required>
+                    <option value="">– оберіть групу –</option>
+                    <option value="Б-121-22-1-ПІ">Б-121-22-1-ПІ</option>
+                    <option value="Б-121-22-2-ПІ">Б-121-22-2-ПІ</option>
+                    <option value="Б-121-22-3-ПІ">Б-121-22-3-ПІ</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn" id="submitBtn">Додати</button>
+        </form>
+    </section>
+
+    <section class="card" style="margin-top:2rem;">
+        <h2 class="card__title">Список студентів</h2>
+
+        <div class="table-wrapper">
+            <table id="recordsTable" class="records">
+                <thead>
+                    <tr>
+                        <th>Ім’я</th>
+                        <th>Прізвище</th>
+                        <th>По‑батькові</th>
+                        <th>Стать</th>
+                        <th>Група</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div style="margin-top:1em; text-align:center;">
+            <button type="button" onclick="exportJSON()">Експорт JSON</button>
+            <button type="button" onclick="exportXML()">Експорт XML</button>
+            <input type="file" id="importFile" accept=".json,.xml">
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Таблиця з фоном</title>
+    <style>
+        body {
+            margin: 20px;
+            font-family: sans-serif;
+        }
+
+        table.background-table {
+            width: 80%;
+            height: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+
+            background: url('images/ps_patron.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        table.background-table th,
+        table.background-table td {
+            background-color: transparent;
+            border: 2px solid #333;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+            color: #fff;
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="text-align:center;">Таблиця 5×5 з фоном</h2>
+
+    <table class="background-table">
+        <thead>
+            <tr>
+                <th>H1</th>
+                <th>H2</th>
+                <th>H3</th>
+                <th>H4</th>
+                <th>H5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>R1C1</td>
+                <td>R1C2</td>
+                <td>R1C3</td>
+                <td>R1C4</td>
+                <td>R1C5</td>
+            </tr>
+            <tr>
+                <td>R2C1</td>
+                <td>R2C2</td>
+                <td>R2C3</td>
+                <td>R2C4</td>
+                <td>R2C5</td>
+            </tr>
+            <tr>
+                <td>R3C1</td>
+                <td>R3C2</td>
+                <td>R3C3</td>
+                <td>R3C4</td>
+                <td>R3C5</td>
+            </tr>
+            <tr>
+                <td>R4C1</td>
+                <td>R4C2</td>
+                <td>R4C3</td>
+                <td>R4C4</td>
+                <td>R4C5</td>
+            </tr>
+            <tr>
+                <td>R5C1</td>
+                <td>R5C2</td>
+                <td colspan="2">Об’єднано colspan</td>
+                <td>R5C5</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

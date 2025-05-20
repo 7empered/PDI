@@ -1,0 +1,6 @@
+<!ELEMENT students (student*)>
+<!ELEMENT student (#PCDATA)>
+<!ATTLIST student
+    gender (male | female) #REQUIRED
+    group  CDATA             #REQUIRED
+>

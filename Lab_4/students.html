@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація студента</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section class="card">
+        <h2 class="card__title">Реєстрація студента</h2>
+        <form class="card__form" action="#" method="POST">
+
+            <div class="field">
+                <label class="field__label" for="firstname">Ім’я</label>
+                <input type="text" id="firstname" name="firstname" class="field__input" placeholder="Ім’я" required>
+            </div>
+
+            <div class="field">
+                <label class="field__label" for="lastname">Прізвище</label>
+                <input type="text" id="lastname" name="lastname" class="field__input" placeholder="Прізвище" required>
+            </div>
+
+            <div class="field">
+                <label class="field__label" for="middlename">По‑батькові</label>
+                <input type="text" id="middlename" name="middlename" class="field__input" placeholder="По‑батькові">
+            </div>
+
+            <div class="field field--inline">
+                <span class="field__label">Стать</span>
+                <label class="radio">
+                    <input type="radio" name="gender" value="male" required>
+                    <span class="radio__box"></span> Чоловіча
+                </label>
+                <label class="radio">
+                    <input type="radio" name="gender" value="female">
+                    <span class="radio__box"></span> Жіноча
+                </label>
+            </div>
+
+            <div class="field">
+                <label class="field__label" for="group">Група</label>
+                <select id="group" name="group" class="field__input" required>
+                    <option value="">– оберіть групу –</option>
+                    <option value="Б-121-22-1-ПІ">Б-121-22-1-ПІ</option>
+                    <option value="Б-121-22-2-ПІ">Б-121-22-2-ПІ</option>
+                    <option value="Б-121-22-3-ПІ">Б-121-22-3-ПІ</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Зберегти</button>
+        </form>
+    </section>
+
+</body>
+
+</html>

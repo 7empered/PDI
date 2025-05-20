@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:xforms="http://www.w3.org/2002/xforms">
+  <head>
+    <title>Реєстрація студента (XForms)</title>
+    <xforms:model>
+      <xforms:instance id="studentData">
+        <studentData>
+          <firstname/>
+          <lastname/>
+          <middlename/>
+          <gender/>
+          <group/>
+        </studentData>
+      </xforms:instance>
+    </xforms:model>
+    <style type="text/css">
+      /* Мінімальний стиль для читабельності */
+      body { font-family: sans-serif; margin: 2em; }
+      .field { margin-bottom: 1em; }
+      label { display: block; margin-bottom: 0.3em; }
+      input, select, textarea { width: 100%; padding: 0.4em; }
+      .inline { display: flex; gap: 1em; align-items: center; }
+      .inline label { display: inline-block; margin: 0; }
+      button { padding: 0.6em 1.2em; background: #4a90e2; color: #fff; border:none; border-radius:4px; }
+    </style>
+  </head>
+  <body>
+    <h2>Реєстрація студента</h2>
+    <form>
+      <div class="field">
+        <xforms:input ref="firstname">
+          <xforms:label>Ім’я</xforms:label>
+          <xforms:hint>Введіть ім’я</xforms:hint>
+        </xforms:input>
+      </div>
+
+      <div class="field">
+        <xforms:input ref="lastname">
+          <xforms:label>Прізвище</xforms:label>
+          <xforms:hint>Введіть прізвище</xforms:hint>
+        </xforms:input>
+      </div>
+
+      <div class="field">
+        <xforms:input ref="middlename">
+          <xforms:label>По‑батькові</xforms:label>
+          <xforms:hint>Введіть по‑батькові (за наявності)</xforms:hint>
+        </xforms:input>
+      </div>
+
+      <div class="field inline">
+        <span><strong>Стать</strong></span>
+        <xforms:select1 ref="gender">
+          <xforms:label>Оберіть стать</xforms:label>
+          <xforms:item>
+            <xforms:label>Чоловіча</xforms:label>
+            <xforms:value>male</xforms:value>
+          </xforms:item>
+          <xforms:item>
+            <xforms:label>Жіноча</xforms:label>
+            <xforms:value>female</xforms:value>
+          </xforms:item>
+        </xforms:select1>
+      </div>
+
+      <div class="field">
+        <xforms:select ref="group">
+          <xforms:label>Група</xforms:label>
+          <xforms:item>
+            <xforms:label>Б-121-22-1-ПІ</xforms:label>
+            <xforms:value>Б-121-22-1-ПІ</xforms:value>
+          </xforms:item>
+          <xforms:item>
+            <xforms:label>Б-121-22-2-ПІ</xforms:label>
+            <xforms:value>Б-121-22-2-ПІ</xforms:value>
+          </xforms:item>
+          <xforms:item>
+            <xforms:label>Б-121-22-3-ПІ</xforms:label>
+            <xforms:value>Б-121-22-3-ПІ</xforms:value>
+          </xforms:item>
+        </xforms:select>
+      </div>
+
+      <div class="field">
+        <xforms:submit>
+          <xforms:label>Зберегти</xforms:label>
+        </xforms:submit>
+      </div>
+    </form>
+  </body>
+</html>
